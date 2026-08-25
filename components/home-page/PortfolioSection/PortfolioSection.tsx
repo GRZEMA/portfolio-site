@@ -77,9 +77,20 @@ const PortfolioSection = (): JSX.Element => {
 					<h3 className='font-display text-3xl font-bold text-text sm:text-4xl'>
 						{t('home.ctaBandTitle')}
 					</h3>
-					<p className='mx-auto mt-4 max-w-xl text-muted'>
+					<p className='mx-auto mt-4 max-w-2xl text-muted'>
 						{t('home.ctaBandBody')}
 					</p>
+					<ul className='mx-auto mt-6 flex max-w-2xl flex-wrap justify-center gap-2'>
+						{(
+							t('home.ctaBandExamples', { returnObjects: true }) as string[]
+						).map((example) => (
+							<li
+								key={example}
+								className='rounded-full border border-line bg-surface px-3 py-1.5 text-sm text-sand'>
+								{example}
+							</li>
+						))}
+					</ul>
 					<div className='mt-8 flex justify-center'>
 						<Button href='/contact' size='lg'>
 							{t('home.ctaBandButton')}

@@ -37,6 +37,9 @@ const WelcomeSection = (): JSX.Element => {
 						className='mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-signal'>
 						{t('home.role')}
 					</motion.p>
+					<p className='mb-5 inline-flex rounded-full border border-signal/30 bg-signal/10 px-3 py-1 text-xs font-medium tracking-wide text-signal'>
+						{t('home.availability')}
+					</p>
 					<h1 className='font-display text-5xl font-extrabold leading-[0.92] tracking-tight text-text sm:text-6xl md:text-7xl lg:text-8xl'>
 						{t('common.name')}
 					</h1>

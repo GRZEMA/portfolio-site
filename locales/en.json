@@ -25,12 +25,13 @@
   },
   "home": {
     "role": "Full-stack developer",
+    "availability": "Evenings & weekends · limited side projects",
     "tagline": "I design and ship product-grade web apps — from polished interfaces to the APIs that power them.",
     "ctaPrimary": "See my work",
     "ctaSecondary": "Contact me",
     "aboutTitle": "About",
     "aboutLead": "Frontend-oriented full-stack developer with 3 years of commercial experience.",
-    "aboutBody": "I currently work as a Consultant at Awumba, building nearshore software for clients across React, Next.js, and .NET. On the side I ship my own SaaS products — SpendBeacon for personal finance, and Lekcjo for tutors and students. I care about clear UX, reliable delivery, and code that stays maintainable after launch.",
+    "aboutBody": "I work full-time as a Consultant at Awumba, building nearshore software for clients across React, Next.js, and .NET. Outside of that role I build my own products — SpendBeacon and Lekcjo — and occasionally take on small personal commissions in the evenings and on weekends: marketing pages, landing sites, and compact web systems. My day job always comes first.",
     "location": "Poznań Metropolitan Area, Poland",
     "skillsTitle": "What I work with",
     "skills": [
@@ -76,15 +77,21 @@
         "description": "Built a tutoring platform with scheduling, online classroom, shared notes, and homework — for solo tutors and small schools."
       }
     ],
-    "ctaBandTitle": "Have a product in mind?",
-    "ctaBandBody": "I help teams turn ideas into shipped web products — clean UI, solid architecture, and fast iteration.",
-    "ctaBandButton": "Let’s talk"
+    "ctaBandTitle": "Small project for evenings or a weekend?",
+    "ctaBandBody": "Outside my full-time role I’m selectively open to personal commissions — marketing pages, landings, small systems, and scoped MVPs. Work happens in my free time only; capacity is limited and timelines stay honest.",
+    "ctaBandExamples": [
+      "Marketing & landing pages",
+      "Small web systems",
+      "MVP / prototype builds",
+      "Scoped feature work"
+    ],
+    "ctaBandButton": "Send a brief"
   },
   "portfolio": {
     "title": "Work",
     "subtitle": "Live products I’ve designed, built, and launched.",
     "ctaTitle": "Want something similar?",
-    "ctaBody": "Tell me about your product — I’ll help you shape and ship it.",
+    "ctaBody": "For a compact build that can fit evenings and weekends, send a short brief — I’ll say quickly whether I have capacity.",
     "projects": {
       "spendbeacon": {
         "name": "SpendBeacon",
@@ -131,9 +138,17 @@
   },
   "services": {
     "title": "Services",
-    "subtitle": "How I can help your product move forward.",
-    "offerTitle": "What I offer",
+    "subtitle": "Occasional evening & weekend commissions — landings, small systems, scoped builds.",
+    "offerTitle": "What I can help with",
     "offers": [
+      {
+        "title": "Marketing & landing pages",
+        "description": "Polished campaign and product pages — clear design, fast delivery, no endless back-and-forth."
+      },
+      {
+        "title": "Small systems & tools",
+        "description": "Compact web apps and utilities: dashboards, forms, admin panels, and lightweight workflows."
+      },
       {
         "title": "Product web apps",
         "description": "End-to-end Next.js applications — auth, billing, dashboards, and the flows users actually need."
@@ -147,34 +162,26 @@
         "description": "APIs and data layers with FastAPI, .NET, PostgreSQL, Redis, and the glue that keeps products reliable."
       },
       {
-        "title": "SaaS foundations",
-        "description": "Stripe subscriptions, i18n, PWA, CSV/import pipelines, and AI-assisted features when they earn their place."
-      },
-      {
-        "title": "Nearshore collaboration",
-        "description": "Clear communication, ownership of tasks, and pragmatic delivery as part of your team via Awumba or directly."
-      },
-      {
-        "title": "UX-minded engineering",
-        "description": "I design interactions with the user journey in mind — fewer dead ends, clearer states, better retention."
+        "title": "Evenings & weekends only",
+        "description": "Personal commissions sit outside my full-time role. Capacity is limited; I only accept work that fits my free time."
       }
     ],
     "whyTitle": "Why work with me",
     "whyItems": [
       "Three years of commercial delivery across React, Next.js, and .NET",
       "I ship my own SaaS products — I know the full loop from idea to billing",
-      "Comfortable owning unfamiliar work and learning what the task needs",
-      "Strong frontend depth with real backend and infra experience",
+      "Selective evening/weekend commissions: landings, small systems, MVPs",
+      "Clear capacity and honest timelines — day-job commitments come first",
       "PL/EN bilingual — useful for Polish market products and international teams",
-      "Focus on maintainable code and honest timelines"
+      "Focus on maintainable code and practical scope"
     ],
-    "ctaTitle": "Ready to start?",
-    "ctaBody": "Share a short brief and I’ll come back with a clear next step.",
+    "ctaTitle": "Have a compact brief?",
+    "ctaBody": "If it can live in evenings and weekends, send a short note — I’ll reply with fit, capacity, and next steps.",
     "ctaButton": "Contact me"
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Tell me about your project, role, or idea.",
+    "subtitle": "Personal commissions for evenings & weekends — or a quick hello.",
     "formTitle": "Send a message",
     "firstName": "First name",
     "lastName": "Last name",
@@ -187,7 +194,7 @@
     "findBody": "Prefer socials or email? Reach me directly."
   },
   "footer": {
-    "line1": "Available for product work, consulting, and collaboration.",
+    "line1": "Selective evening & weekend commissions — landings, small systems, scoped builds.",
     "line2": "Or write to",
     "thanks": "Thanks for stopping by."
   },
@@ -197,12 +204,12 @@
   },
   "meta": {
     "homeTitle": "Dawid Krzemiński | Full-stack Developer",
-    "homeDescription": "Consultant at Awumba and builder of SpendBeacon & Lekcjo. Full-stack developer focused on React, Next.js, and product SaaS.",
+    "homeDescription": "Consultant at Awumba and builder of SpendBeacon & Lekcjo. Occasional evening and weekend commissions: marketing pages and small systems.",
     "portfolioTitle": "Work | Dawid Krzemiński",
     "portfolioDescription": "SpendBeacon and Lekcjo — live products built by Dawid Krzemiński.",
     "servicesTitle": "Services | Dawid Krzemiński",
-    "servicesDescription": "Product web apps, frontend craft, and full-stack delivery.",
+    "servicesDescription": "Evening and weekend commissions: marketing pages, small systems, MVPs, and full-stack builds.",
     "contactTitle": "Contact | Dawid Krzemiński",
-    "contactDescription": "Get in touch with Dawid Krzemiński about your next product or collaboration."
+    "contactDescription": "Get in touch about an evening/weekend commission or say hello."
   }
 }
