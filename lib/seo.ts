@@ -3,7 +3,7 @@ export const siteConfig = {
 	title: 'Dawid Krzemiński | Full-stack Developer',
 	description:
 		'Consultant at Awumba and builder of SpendBeacon & Lekcjo. Full-stack developer focused on React, Next.js, and product SaaS.',
-	url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dawidkrzeminski.tech',
+	url: process.env.NEXT_PUBLIC_SITE_URL ?? 'https://dawidkrzeminski.com',
 	locale: 'en_US',
 	ogImage: '/assets/projects/spendbeacon.png',
 	email: 'dawidkrzmnsk@gmail.com',

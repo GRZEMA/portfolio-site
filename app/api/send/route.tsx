@@ -18,7 +18,7 @@ export const POST = async (req: Request) => {
 
 	try {
 		await resend.emails.send({
-			from: `${firstName} ${lastName} <dawid@dawidkrzeminski.tech>`,
+			from: `${firstName} ${lastName} <dawid@dawidkrzeminski.com>`,
 			to: ['dawidkrzmnsk@gmail.com'],
 			subject: `${firstName} ${lastName} has sent you a message through your contact form!`,
 			react: EmailTemplate({
