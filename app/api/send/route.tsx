@@ -30,7 +30,7 @@ export const POST = async (req: Request) => {
 		const { data, error } = await resend.emails.send({
 			from: FROM_EMAIL,
 			to: [TO_EMAIL],
-			reply_to: email,
+			replyTo: email,
 			subject: `Portfolio contact: ${firstName} ${lastName}`,
 			react: EmailTemplate({
 				firstName,
@@ -42,20 +42,22 @@ export const POST = async (req: Request) => {
 			}),
 		})
 
-		if (error) {
+		if (error || !data?.id) {
 			console.error('Resend error:', error)
 			return NextResponse.json(
 				{
 					error:
-						typeof error === 'object' && error && 'message' in error
-							? String((error as { message: string }).message)
-							: 'Failed to send email. Check Resend domain verification.',
+						error?.message ||
+						'Failed to send email. Check Resend domain verification and API key.',
 				},
 				{ status: 502 }
 			)
 		}
 
-		return NextResponse.json({ data: 'Your mail was successfully sent!', id: data?.id })
+		return NextResponse.json({
+			data: 'Your mail was successfully sent!',
+			id: data.id,
+		})
 	} catch (error) {
 		console.error('Contact API error:', error)
 		return NextResponse.json(
