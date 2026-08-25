@@ -52,35 +52,46 @@ const ContactFormSection = (): JSX.Element => {
 	const formSubmissionHandler = async (e: FormEvent) => {
 		e.preventDefault()
 		setIsLoading(true)
-		const res = await fetch('/api/send', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify({
-				firstName: firstNameRef.current?.value,
-				lastName: lastNameRef.current?.value,
-				email: emailRef.current?.value,
-				phone: phoneRef.current?.value,
-				address: addressRef.current?.value,
-				message: messageRef.current?.value,
-			}),
-		})
-		const data: { error?: string; data?: string } = await res.json()
+		try {
+			const res = await fetch('/api/send', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					firstName: firstNameRef.current?.value,
+					lastName: lastNameRef.current?.value,
+					email: emailRef.current?.value,
+					phone: phoneRef.current?.value,
+					address: addressRef.current?.value,
+					message: messageRef.current?.value,
+				}),
+			})
+			const data: { error?: string | object; data?: string } = await res.json()
 
-		if (data.data) {
+			if (res.ok && data.data) {
+				modalCtx.openModal(t('contact.success'), 'success')
+				firstNameRef.current!.value = ''
+				lastNameRef.current!.value = ''
+				emailRef.current!.value = ''
+				phoneRef.current!.value = ''
+				addressRef.current!.value = ''
+				messageRef.current!.value = ''
+				return
+			}
+
+			const errorMessage =
+				typeof data.error === 'string'
+					? data.error
+					: 'Failed to send message. Please try again or email me directly.'
+			modalCtx.openModal(errorMessage, 'error')
+		} catch {
+			modalCtx.openModal(
+				'Failed to send message. Please try again or email me directly.',
+				'error'
+			)
+		} finally {
 			setIsLoading(false)
-			modalCtx.openModal(t('contact.success'), 'success')
-			firstNameRef.current!.value = ''
-			lastNameRef.current!.value = ''
-			emailRef.current!.value = ''
-			phoneRef.current!.value = ''
-			addressRef.current!.value = ''
-			messageRef.current!.value = ''
-			return
-		} else if (data.error) {
-			setIsLoading(false)
-			modalCtx.openModal(data.error, 'error')
 		}
 	}
 

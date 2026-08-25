@@ -1,7 +1,7 @@
 interface EmailTemplateProps {
 	message: string
 	address?: string
-	phone?: number
+	phone?: string | number
 	email: string
 	firstName: string
 	lastName: string
@@ -17,10 +17,22 @@ export const EmailTemplate = ({
 }: EmailTemplateProps): JSX.Element => (
 	<div>
 		<p>
-			{firstName} {lastName}, &lt;{email}&gt; is texting:{' '}
+			New message from {firstName} {lastName} (&lt;{email}&gt;)
 		</p>
-		<p>Message: {message}</p>
-		{address ? <p>Address: {address}</p> : undefined}
-		{phone ? <p>Phone: {phone}</p> : undefined}
+		<p>
+			<strong>Message:</strong> {message}
+		</p>
+		{address ? (
+			<p>
+				<strong>Company / city:</strong> {address}
+			</p>
+		) : null}
+		{phone ? (
+			<p>
+				<strong>Phone:</strong> {phone}
+			</p>
+		) : null}
+		<p>Reply directly to this email to respond to the sender.</p>
 	</div>
 )
+
