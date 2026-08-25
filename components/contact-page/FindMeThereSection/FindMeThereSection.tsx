@@ -1,29 +1,38 @@
 'use client'
 
-import AnimatedList from '../../multi-page-components/AnimatedList/AnimatedList'
-import SectionHeading from '../../multi-page-components/UI/SectionHeading'
-import TextWithSquares from '../../multi-page-components/UI/TextWithSquares'
-
-const socials = [
-	{ span: 'Email:', text: 'dawidkrzmnsk@gmail.com', email: true },
-	{ span: 'Twitter:', text: 'https://twitter.com/GRZEMAA', link: true },
-	{ span: 'WhatsApp:', text: 'https://wa.link/tfq2vf', link: true },
-	{
-		span: 'LinkedIn:',
-		text: 'https://www.linkedin.com/in/dawid-krzemi%C5%84ski-108961209/',
-		link: true,
-	},
-]
+import Socials from '@/components/multi-page-components/Footer/Socials'
+import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+import Link from 'next/link'
 
 const FindMeThereSection = (): JSX.Element => {
+	const { t } = useTranslation()
+
 	return (
-		<section className='flex flex-col w-full pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-14 2xl:pt-16'>
-			<SectionHeading id='find-me-there'>Find Me There!</SectionHeading>
-			<div className='container max-w-[1400px] flex flex-col items-center space-y-6 md:space-y-8 lg:space-y-10 px-4 pl-8 pb-6 text-text pt-12 md:pt-20'>
-				<AnimatedList items={socials} />
-				<TextWithSquares classnames='font-dancing text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl max-w-[80%] md:max-w-[60%] py-8'>
-					Eagerly Awaiting Your Reach – Let&apos;s Connect!
-				</TextWithSquares>
+		<section className='pb-20'>
+			<div className='container max-w-3xl text-center'>
+				<motion.div
+					initial={{ opacity: 0, y: 16 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					className='rounded-3xl border border-line bg-elevated px-6 py-12 sm:px-10'>
+					<h2 className='font-display text-2xl font-bold text-text sm:text-3xl'>
+						{t('contact.findTitle')}
+					</h2>
+					<p className='mx-auto mt-3 max-w-md text-muted'>
+						{t('contact.findBody')}
+					</p>
+					<p className='mt-6'>
+						<Link
+							href={`mailto:${t('common.email')}`}
+							className='font-medium text-signal hover:underline'>
+							{t('common.email')}
+						</Link>
+					</p>
+					<div className='mt-8'>
+						<Socials />
+					</div>
+				</motion.div>
 			</div>
 		</section>
 	)

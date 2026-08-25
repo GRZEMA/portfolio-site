@@ -1,0 +1,208 @@
+{
+  "nav": {
+    "home": "Start",
+    "about": "O mnie",
+    "work": "Projekty",
+    "services": "Usługi",
+    "contact": "Kontakt",
+    "openMenu": "Otwórz menu",
+    "closeMenu": "Zamknij menu"
+  },
+  "common": {
+    "name": "Dawid Krzemiński",
+    "email": "dawidkrzmnsk@gmail.com",
+    "viewLive": "Zobacz live",
+    "viewWork": "Zobacz projekty",
+    "getInTouch": "Napisz do mnie",
+    "explore": "Zobacz",
+    "backHome": "Wróć na start",
+    "sending": "Wysyłanie…",
+    "submit": "Wyślij wiadomość",
+    "close": "Zamknij",
+    "features": "Funkcje",
+    "stack": "Stack",
+    "role": "Consultant · Full-stack developer"
+  },
+  "home": {
+    "role": "Full-stack developer",
+    "tagline": "Projektuję i wdrażam aplikacje produktowe — od dopracowanych interfejsów po API, które je napędzają.",
+    "ctaPrimary": "Zobacz projekty",
+    "ctaSecondary": "Kontakt",
+    "aboutTitle": "O mnie",
+    "aboutLead": "Frontendowo zorientowany full-stack developer z 3-letnim doświadczeniem komercyjnym.",
+    "aboutBody": "Pracuję jako Consultant w Awumba, budując oprogramowanie nearshore dla klientów w React, Next.js i .NET. Równolegle rozwijam własne produkty SaaS — SpendBeacon do finansów osobistych oraz Lekcjo dla korepetytorów i uczniów. Zależy mi na jasnym UX, rzetelnym delivery i kodzie, który da się utrzymać po starcie.",
+    "location": "Aglomeracja poznańska, Polska",
+    "skillsTitle": "Technologie",
+    "skills": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      ".NET",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Stripe",
+      "Git",
+      "i18n"
+    ],
+    "workTitle": "Wybrane projekty",
+    "workSubtitle": "Produkty, które zbudowałem end-to-end — produkt, frontend i backend.",
+    "experienceTitle": "Doświadczenie",
+    "experience": [
+      {
+        "role": "Consultant",
+        "company": "Awumba",
+        "period": "2026 — obecnie",
+        "description": "Full-stack delivery dla klientów nearshore — React, Next.js, .NET, integracje chmurowe i UI produktowe."
+      },
+      {
+        "role": "Junior Frontend Developer",
+        "company": "Awumba",
+        "period": "Wcześniej",
+        "description": "Responsywne interfejsy, systemy komponentów i features w projektach komercyjnych."
+      },
+      {
+        "role": "Founder & Builder",
+        "company": "SpendBeacon",
+        "period": "2026 — obecnie",
+        "description": "Full-stack SaaS finansowy: Next.js, FastAPI, PostgreSQL, kategoryzacja AI, Stripe, i18n PL/EN."
+      },
+      {
+        "role": "Founder & Builder",
+        "company": "Lekcjo",
+        "period": "2026 — obecnie",
+        "description": "Platforma dla korepetytorów: grafik, sala online, wspólne notatki i prace domowe — dla solo i małych szkół."
+      }
+    ],
+    "ctaBandTitle": "Masz pomysł na produkt?",
+    "ctaBandBody": "Pomagam zespołom zamieniać pomysły w działające produkty webowe — czysty UI, solidna architektura, szybka iteracja.",
+    "ctaBandButton": "Porozmawiajmy"
+  },
+  "portfolio": {
+    "title": "Projekty",
+    "subtitle": "Żywe produkty, które zaprojektowałem, zbudowałem i uruchomiłem.",
+    "ctaTitle": "Chcesz coś podobnego?",
+    "ctaBody": "Opowiedz o swoim produkcie — pomogę go ukształtować i wdrożyć.",
+    "projects": {
+      "spendbeacon": {
+        "name": "SpendBeacon",
+        "tagline": "Finanse osobiste, budżety i import CSV z banku",
+        "description": "Full-stack SaaS, który zamienia eksporty CSV/Excel z banku w czytelne insighty o wydatkach. Na free: kategoryzacja regułami; na Premium AI mapuje nietypowe layouty, kategoryzuje transakcje i odpowiada na pytania o Twoje pieniądze.",
+        "features": [
+          "Import CSV/Excel z dowolnego banku (mBank, PKO BP, ING i inne)",
+          "Kategoryzacja regułami i AI, ucząca się z poprawek",
+          "Safe-to-spend, budżety, radar subskrypcji i alerty",
+          "Asystent finansowy AI z raportami na poziomie merchantów",
+          "Subskrypcje Stripe, JWT/OAuth, PWA, i18n PL/EN"
+        ],
+        "stack": [
+          "Next.js",
+          "FastAPI",
+          "PostgreSQL",
+          "Redis",
+          "Celery",
+          "Groq AI",
+          "Stripe",
+          "PWA"
+        ]
+      },
+      "lekcjo": {
+        "name": "Lekcjo",
+        "tagline": "Grafik, notatki i lekcja w jednym miejscu",
+        "description": "Platforma dla korepetytorów i ich uczniów — umawianie, sala online i materiały razem. Rodzic wybiera wolny slot, lekcja odbywa się z wideo, tablicą i zeszytem w jednym oknie, a praca domowa ląduje tam, gdzie trzeba — nie w czacie.",
+        "features": [
+          "Grafik z wolnymi slotami do rezerwacji przez rodzica",
+          "Sala lekcyjna online: wideo, tablica i zeszyt",
+          "Notatki z lekcji i prace domowe u ucznia",
+          "Dla solo korepetytorów i małych szkół — bez prowizji marketplace",
+          "Jasne plany: Solo i Szkoła"
+        ],
+        "stack": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Sala online",
+          "Grafik"
+        ]
+      }
+    }
+  },
+  "services": {
+    "title": "Usługi",
+    "subtitle": "Jak mogę pomóc Twojemu produktowi ruszyć do przodu.",
+    "offerTitle": "Co oferuję",
+    "offers": [
+      {
+        "title": "Aplikacje produktowe",
+        "description": "Kompletne aplikacje Next.js — auth, płatności, dashboards i flow’y, których użytkownicy naprawdę potrzebują."
+      },
+      {
+        "title": "Frontend z klasą",
+        "description": "Responsywne interfejsy React z typografią, ruchem i dostępnością — gotowe do wdrożenia."
+      },
+      {
+        "title": "Full-stack delivery",
+        "description": "API i warstwa danych: FastAPI, .NET, PostgreSQL, Redis i spójność, która trzyma produkt w ryzach."
+      },
+      {
+        "title": "Fundamenty SaaS",
+        "description": "Subskrypcje Stripe, i18n, PWA, pipeline’y importu CSV i funkcje AI wtedy, gdy naprawdę mają sens."
+      },
+      {
+        "title": "Współpraca nearshore",
+        "description": "Jasna komunikacja, ownership zadań i pragmatyczne delivery w zespole Awumba lub bezpośrednio."
+      },
+      {
+        "title": "Engineering z myślą o UX",
+        "description": "Projektuję interakcje pod ścieżkę użytkownika — mniej ślepych zaułków, czytelniejsze stany, lepsza retencja."
+      }
+    ],
+    "whyTitle": "Dlaczego ze mną",
+    "whyItems": [
+      "Trzy lata komercyjnego delivery w React, Next.js i .NET",
+      "Sam shippuję produkty SaaS — znam pętlę od pomysłu do billingu",
+      "Chętnie biorę nieznane zadania i uczę się tego, czego wymaga task",
+      "Głęboki frontend plus realne doświadczenie backendu i infrastruktury",
+      "Dwujęzycznie PL/EN — produkty na rynek PL i zespoły międzynarodowe",
+      "Kod do utrzymania i uczciwe terminy"
+    ],
+    "ctaTitle": "Zaczynamy?",
+    "ctaBody": "Napisz krótki brief — wrócę z jasnym kolejnym krokiem.",
+    "ctaButton": "Napisz do mnie"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Opowiedz o projekcie, roli albo pomyśle.",
+    "formTitle": "Wyślij wiadomość",
+    "firstName": "Imię",
+    "lastName": "Nazwisko",
+    "email": "Email",
+    "phone": "Telefon (opcjonalnie)",
+    "address": "Firma / miasto (opcjonalnie)",
+    "message": "O czym chcesz napisać?",
+    "success": "Wiadomość wysłana — odezwę się wkrótce.",
+    "findTitle": "Gdzie indziej",
+    "findBody": "Wolisz social media albo mail? Napisz bezpośrednio."
+  },
+  "footer": {
+    "line1": "Otwarty na pracę produktową, consulting i współpracę.",
+    "line2": "Albo napisz na",
+    "thanks": "Dzięki, że wpadłeś."
+  },
+  "notFound": {
+    "title": "Nie znaleziono strony",
+    "body": "Ta ścieżka nie istnieje — wróćmy na start."
+  },
+  "meta": {
+    "homeTitle": "Dawid Krzemiński | Full-stack Developer",
+    "homeDescription": "Consultant w Awumba, twórca SpendBeacon i Lekcjo. Full-stack developer: React, Next.js, produkty SaaS.",
+    "portfolioTitle": "Projekty | Dawid Krzemiński",
+    "portfolioDescription": "SpendBeacon i Lekcjo — żywe produkty Dawida Krzemińskiego.",
+    "servicesTitle": "Usługi | Dawid Krzemiński",
+    "servicesDescription": "Aplikacje produktowe, frontend i full-stack delivery.",
+    "contactTitle": "Kontakt | Dawid Krzemiński",
+    "contactDescription": "Skontaktuj się z Dawidem Krzemińskim w sprawie produktu lub współpracy."
+  }
+}

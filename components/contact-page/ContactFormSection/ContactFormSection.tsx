@@ -2,12 +2,13 @@
 
 import { FormEvent, useRef, useContext, useState } from 'react'
 import Button from '../../multi-page-components/UI/Button'
-import SectionHeading from '../../multi-page-components/UI/SectionHeading'
 import { motion } from 'framer-motion'
 import { ModalContext } from '@/app/store/modal-context'
+import { useTranslation } from 'react-i18next'
 
 const ContactFormSection = (): JSX.Element => {
 	const [isLoading, setIsLoading] = useState(false)
+	const { t } = useTranslation()
 
 	const firstNameRef = useRef<HTMLInputElement>(null)
 	const lastNameRef = useRef<HTMLInputElement>(null)
@@ -21,26 +22,32 @@ const ContactFormSection = (): JSX.Element => {
 	const inputsInWrapper = [
 		{
 			type: 'text',
-			placeholder: 'First Name',
+			placeholder: t('contact.firstName'),
 			id: 'first-name',
 			ref: firstNameRef,
 		},
 		{
 			type: 'text',
-			placeholder: 'Last Name',
+			placeholder: t('contact.lastName'),
 			id: 'last-name',
 			ref: lastNameRef,
 		},
-		{ type: 'email', placeholder: 'Email', id: 'email', ref: emailRef },
 		{
-			type: 'number',
-			placeholder: 'Phone (optional)',
+			type: 'email',
+			placeholder: t('contact.email'),
+			id: 'email',
+			ref: emailRef,
+		},
+		{
+			type: 'tel',
+			placeholder: t('contact.phone'),
 			id: 'phone',
 			ref: phoneRef,
 		},
 	]
+
 	const inputClasses =
-		'p-2 sm:p-3 md:p-[1rem] lg:p-[1.25rem] xl:p-[1.5rem] bg-lightGray font-normal rounded-md w-full'
+		'w-full rounded-2xl border border-line bg-elevated px-4 py-3.5 text-base text-text placeholder:text-muted/70 outline-none transition-colors focus:border-signal'
 
 	const formSubmissionHandler = async (e: FormEvent) => {
 		e.preventDefault()
@@ -63,10 +70,7 @@ const ContactFormSection = (): JSX.Element => {
 
 		if (data.data) {
 			setIsLoading(false)
-			modalCtx.openModal(
-				'Succesfully sent your email to Dawid Krzemiński!',
-				'success'
-			)
+			modalCtx.openModal(t('contact.success'), 'success')
 			firstNameRef.current!.value = ''
 			lastNameRef.current!.value = ''
 			emailRef.current!.value = ''
@@ -81,56 +85,48 @@ const ContactFormSection = (): JSX.Element => {
 	}
 
 	return (
-		<section className='flex flex-col w-full pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-14 2xl:pt-16'>
-			<SectionHeading id='get-in-touch'>Get In Touch</SectionHeading>
-			<div className='container max-w-[1400px] flex flex-col items-center space-y-6 md:space-y-8 lg:space-y-10 px-4 pl-8 pb-6 text-text pt-12 md:pt-20'>
+		<section id='get-in-touch' className='scroll-mt-28 py-16 sm:py-20'>
+			<div className='container max-w-3xl'>
+				<h2 className='mb-8 text-center font-display text-3xl font-bold text-text'>
+					{t('contact.formTitle')}
+				</h2>
 				<motion.form
-					initial={{ opacity: 0, x: -200 }}
-					whileInView={{ opacity: 1, x: 0 }}
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
 					onSubmit={formSubmissionHandler}
-					className='bg-customGray flex flex-col items-center p-10 sm:p-12 md:p-14 lg:p-16 xl:p-[4.5rem] rounded-lg w-full gap-5 sm:gap-7 md:gap-9 lg:gap-11 xl:gap-13 text-xl sm:text-2xl lg:text-3xl'>
-					<div className='wrapper grid grid-cols-1 md:grid-cols-2 w-full gap-5 sm:gap-7 md:gap-9 lg:gap-11 xl:gap-13'>
+					className='flex flex-col gap-4 rounded-3xl border border-line bg-surface p-6 sm:gap-5 sm:p-10'>
+					<div className='grid gap-4 sm:grid-cols-2 sm:gap-5'>
 						{inputsInWrapper.map((input) => (
-							<motion.input
-								initial={{ opacity: 0, x: -200 }}
-								whileInView={{ opacity: 1, x: 0 }}
-								viewport={{ once: true }}
+							<input
 								key={input.id}
 								type={input.type}
 								placeholder={input.placeholder}
 								id={input.id}
 								ref={input.ref}
 								className={inputClasses}
+								required={input.id !== 'phone'}
 							/>
 						))}
 					</div>
-					<motion.input
-						initial={{ opacity: 0, x: -200 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						viewport={{ once: true }}
+					<input
 						type='text'
-						placeholder='Address (optional)'
+						placeholder={t('contact.address')}
 						className={inputClasses}
 						ref={addressRef}
 					/>
-					<motion.textarea
-						initial={{ opacity: 0, x: -200 }}
-						whileInView={{ opacity: 1, x: 0 }}
-						viewport={{ once: true }}
+					<textarea
 						id='message'
-						placeholder='Type your message here'
+						placeholder={t('contact.message')}
 						ref={messageRef}
-						className={
-							'max-w-full h-[150px] md:h-[200px] lg:h-[250px] ' + inputClasses
-						}></motion.textarea>
-					<Button
-						size='2xl'
-						type='submit'
-						customClasses='!font-bold'
-						disabled={isLoading}>
-						{isLoading ? 'Sending...' : 'Submit'}
-					</Button>
+						required
+						className={`${inputClasses} min-h-[160px] resize-y`}
+					/>
+					<div className='flex justify-center pt-2'>
+						<Button type='submit' size='lg' disabled={isLoading}>
+							{isLoading ? t('common.sending') : t('common.submit')}
+						</Button>
+					</div>
 				</motion.form>
 			</div>
 		</section>

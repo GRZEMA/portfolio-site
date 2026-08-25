@@ -1,76 +1,58 @@
+'use client'
+
 import {
-	faFacebook,
-	faWhatsapp,
-	faTwitter,
+	faGithub,
 	faLinkedin,
+	faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons'
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 
+const socials = [
+	{
+		href: 'mailto:dawidkrzmnsk@gmail.com',
+		icon: faEnvelope,
+		label: 'Email',
+	},
+	{
+		href: 'https://www.linkedin.com/in/dawid-krzeminski/',
+		icon: faLinkedin,
+		label: 'LinkedIn',
+	},
+	{
+		href: 'https://github.com/GRZEMA',
+		icon: faGithub,
+		label: 'GitHub',
+	},
+	{
+		href: 'https://wa.link/wb9y7h',
+		icon: faWhatsapp,
+		label: 'WhatsApp',
+	},
+]
+
 const Socials = (): JSX.Element => {
-	const socialClasses = 'Social relative w-10 h-10 sm:w-12 sm:h-12'
 	return (
-		<div className='flex gap-4 sm:gap-8 bg-background p-4 sm:pl-8 sm:pr-8 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-			<motion.div
-				initial={{ y: 50, opacity: 0 }}
-				whileInView={{ y: 0, opacity: 1 }}
-				viewport={{ once: true }}>
-				<Link
-					className={socialClasses}
-					href='https://www.facebook.com/dawid.krzeminski.355/'
-					target='_blank'>
-					<FontAwesomeIcon
-						icon={faFacebook}
-						className='text-text text-4xl md:text-5xl hover:text-customYellow transition-all hover:scale-105 duration-300'
-					/>
-				</Link>
-			</motion.div>
-			<motion.div
-				initial={{ y: 50, opacity: 0 }}
-				whileInView={{ y: 0, opacity: 1 }}
-				transition={{ delay: 0.05 }}
-				viewport={{ once: true }}>
-				<Link
-					className={socialClasses}
-					href='https://twitter.com/GRZEMAA'
-					target='_blank'>
-					<FontAwesomeIcon
-						icon={faTwitter}
-						className='text-text text-4xl md:text-5xl hover:text-customYellow transition-all hover:scale-105 duration-300'
-					/>
-				</Link>
-			</motion.div>
-			<motion.div
-				initial={{ y: 50, opacity: 0 }}
-				whileInView={{ y: 0, opacity: 1 }}
-				transition={{ delay: 0.1 }}
-				viewport={{ once: true }}>
-				<Link
-					className={socialClasses}
-					href='https://www.linkedin.com/in/dawid-krzemi%C5%84ski-108961209/'
-					target='_blank'>
-					<FontAwesomeIcon
-						icon={faLinkedin}
-						className='text-text text-4xl md:text-5xl hover:text-customYellow transition-all hover:scale-105 duration-300'
-					/>
-				</Link>
-			</motion.div>
-			<motion.div
-				initial={{ y: 50, opacity: 0 }}
-				whileInView={{ y: 0, opacity: 1 }}
-				transition={{ delay: 0.15 }}
-				viewport={{ once: true }}>
-				<Link
-					className={socialClasses}
-					href='https://wa.link/wb9y7h'
-					target='_blank'>
-					<FontAwesomeIcon
-						icon={faWhatsapp}
-						className='text-text text-4xl md:text-5xl hover:text-customYellow transition-all hover:scale-105 duration-300'
-					/>
-				</Link>
-			</motion.div>
+		<div className='flex items-center justify-center gap-4'>
+			{socials.map((social, index) => (
+				<motion.div
+					key={social.href}
+					initial={{ y: 20, opacity: 0 }}
+					whileInView={{ y: 0, opacity: 1 }}
+					transition={{ delay: index * 0.05 }}
+					viewport={{ once: true }}>
+					<Link
+						href={social.href}
+						target={social.href.startsWith('http') ? '_blank' : undefined}
+						rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+						aria-label={social.label}
+						className='flex h-11 w-11 items-center justify-center rounded-full border border-line bg-surface text-muted transition-all duration-300 hover:border-signal hover:text-signal'>
+						<FontAwesomeIcon icon={social.icon} className='text-lg' />
+					</Link>
+				</motion.div>
+			))}
 		</div>
 	)
 }

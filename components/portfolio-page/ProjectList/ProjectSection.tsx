@@ -1,52 +1,97 @@
 'use client'
 
-import SectionHeading from '../../multi-page-components/UI/SectionHeading'
-import SectionSubHeading from '../../multi-page-components/UI/SectionSubHeading'
-import { ProjectModel } from '@/app/portfolio/page'
+import Image from 'next/image'
 import { motion } from 'framer-motion'
-import TextWithSquares from '../../multi-page-components/UI/TextWithSquares'
-import Button from '../../multi-page-components/UI/Button'
-import AnimatedList from '../../multi-page-components/AnimatedList/AnimatedList'
-import ProjectImagesList from './ProjectImagesList'
+import { useTranslation } from 'react-i18next'
+import { projectsMeta, ProjectId } from '@/lib/projects'
+import Button from '@/components/multi-page-components/UI/Button'
 
-interface ProjectItemProps {
-	project: ProjectModel
-}
+const ProjectSection = ({ projectId }: { projectId: ProjectId }): JSX.Element => {
+	const { t } = useTranslation()
+	const meta = projectsMeta.find((p) => p.id === projectId)!
+	const features = t(`portfolio.projects.${projectId}.features`, {
+		returnObjects: true,
+	}) as string[]
+	const stack = t(`portfolio.projects.${projectId}.stack`, {
+		returnObjects: true,
+	}) as string[]
 
-const ProjectSection = ({ project }: ProjectItemProps): JSX.Element => {
 	return (
-		<section className='flex flex-col w-full pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-14 2xl:pt-16'>
-			<SectionHeading id={project.id}>{project.name}</SectionHeading>
-			<div className='container max-w-[1400px] flex flex-col items-center pt-8 2xl:pt-8 space-y-6 md:space-y-8 lg:space-y-10 px-4 pl-8 pb-6 text-text'>
-				<SectionSubHeading>Quick description</SectionSubHeading>
-				<motion.p
-					initial={{ opacity: 0, y: 100 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
-					className='self-start max-w-prose 2xl:max-w-[85ch] sm:text-2xl lg:text-3xl xl:text-4xl'>
-					{project.quickDescription}
-				</motion.p>
-				<SectionSubHeading>Features</SectionSubHeading>
-				<AnimatedList items={project.featuresList} />
-				<SectionSubHeading>Tech Stack</SectionSubHeading>
-				<AnimatedList items={project.stackList} />
-				<ProjectImagesList project={project} />
-				<motion.div
-					initial={{ opacity: 0, y: 100 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true }}
-					className='flex flex-col items-center text-center space-y-4 md:space-y-8 py-4 md:py-8'>
-					<TextWithSquares classnames='font-dancing text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl'>
-						Stay updated! More projects comes soon!
-					</TextWithSquares>
-					<p className='text-xl sm:text-2xl lg:text-3xl'>
-						Did you like my projects and <br />
-						wanna collaborate?
-					</p>
-					<Button href='/contact' size='2xl'>
-						Contact me Here!
-					</Button>
-				</motion.div>
+		<section id={projectId} className='scroll-mt-28 py-16 sm:py-24'>
+			<div className='container max-w-6xl'>
+				<div className='grid items-start gap-10 lg:grid-cols-2 lg:gap-14'>
+					<motion.div
+						initial={{ opacity: 0, y: 24 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						className='relative aspect-[16/10] overflow-hidden rounded-3xl border border-line bg-surface shadow-glow'>
+						<Image
+							src={meta.image}
+							alt={t(`portfolio.projects.${projectId}.name`)}
+							fill
+							sizes='(max-width: 1024px) 100vw, 50vw'
+							className='object-cover object-top'
+						/>
+					</motion.div>
+
+					<motion.div
+						initial={{ opacity: 0, y: 24 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true }}
+						transition={{ delay: 0.1 }}>
+						<div className='mb-3 flex items-center gap-3'>
+							<span
+								className='h-2.5 w-2.5 rounded-full'
+								style={{ backgroundColor: meta.accent }}
+							/>
+							<p className='text-sm font-semibold uppercase tracking-[0.18em] text-muted'>
+								{t(`portfolio.projects.${projectId}.tagline`)}
+							</p>
+						</div>
+						<h2 className='font-display text-4xl font-bold text-text sm:text-5xl'>
+							{t(`portfolio.projects.${projectId}.name`)}
+						</h2>
+						<p className='mt-5 text-lg leading-relaxed text-muted'>
+							{t(`portfolio.projects.${projectId}.description`)}
+						</p>
+
+						<div className='mt-8'>
+							<h3 className='mb-3 font-display text-lg font-semibold text-text'>
+								{t('common.features')}
+							</h3>
+							<ul className='space-y-2.5'>
+								{features.map((feature) => (
+									<li
+										key={feature}
+										className='flex gap-3 text-muted before:mt-2 before:h-1.5 before:w-1.5 before:shrink-0 before:rounded-full before:bg-signal before:content-[""]'>
+										{feature}
+									</li>
+								))}
+							</ul>
+						</div>
+
+						<div className='mt-8'>
+							<h3 className='mb-3 font-display text-lg font-semibold text-text'>
+								{t('common.stack')}
+							</h3>
+							<div className='flex flex-wrap gap-2'>
+								{stack.map((item) => (
+									<span
+										key={item}
+										className='rounded-full border border-line bg-elevated px-3 py-1 text-sm text-sand'>
+										{item}
+									</span>
+								))}
+							</div>
+						</div>
+
+						<div className='mt-10'>
+							<Button href={meta.liveUrl} external size='lg'>
+								{t('common.viewLive')}
+							</Button>
+						</div>
+					</motion.div>
+				</div>
 			</div>
 		</section>
 	)

@@ -1,8 +1,12 @@
+'use client'
+
 import { usePathname } from 'next/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import Logo from '../Logo/Logo'
 import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from '@/components/i18n/LanguageSwitcher'
 
 interface DesktopNavProps {
 	openNav: () => void
@@ -10,50 +14,51 @@ interface DesktopNavProps {
 
 const DesktopNav = ({ openNav }: DesktopNavProps): JSX.Element => {
 	const pathname = usePathname()
+	const { t } = useTranslation()
+
+	const links = [
+		{ href: '/', label: t('nav.home') },
+		{ href: '/#about', label: t('nav.about') },
+		{ href: '/portfolio', label: t('nav.work') },
+		{ href: '/services', label: t('nav.services') },
+		{ href: '/contact', label: t('nav.contact') },
+	]
+
+	const isActive = (href: string) => {
+		if (href === '/') return pathname === '/'
+		if (href.startsWith('/#')) return false
+		return pathname === href
+	}
 
 	return (
-		<div className='nav p-6 w-full flex items-center justify-between'>
+		<div className='flex w-full items-center justify-between gap-4 py-4'>
 			<Logo />
-			<ul className='hidden md:flex gap-8 text-xl'>
-				<li
-					className={`hover:text-customYellow transition-colors duration-300 ${
-						pathname === '/' && 'text-customYellow'
-					}`}>
-					<Link href='/'>Home</Link>
-				</li>
-				<li
-					className={`hover:text-customYellow transition-colors duration-300 ${
-						pathname === '/#about' && 'text-customYellow'
-					}`}>
-					<Link href='/#about'>About</Link>
-				</li>
-				<li
-					className={`hover:text-customYellow transition-colors duration-300 ${
-						pathname === '/portfolio' && 'text-customYellow'
-					}`}>
-					<Link href='/portfolio'>Portfolio</Link>
-				</li>
-				<li
-					className={`hover:text-customYellow transition-colors duration-300 ${
-						pathname === '/services' && 'text-customYellow'
-					}`}>
-					<Link href='/services'>Services</Link>
-				</li>
-				<li
-					className={`hover:text-customYellow transition-colors duration-300 ${
-						pathname === '/contact' && 'text-customYellow'
-					}`}>
-					<Link href='/contact'>Contact</Link>
-				</li>
+			<ul className='hidden items-center gap-1 md:flex lg:gap-2'>
+				{links.map((link) => (
+					<li key={link.href}>
+						<Link
+							href={link.href}
+							className={`rounded-full px-3 py-2 text-sm font-medium transition-colors duration-200 lg:px-4 ${
+								isActive(link.href)
+									? 'text-signal'
+									: 'text-muted hover:text-text'
+							}`}>
+							{link.label}
+						</Link>
+					</li>
+				))}
 			</ul>
-			<button
-				className='burger fixed p-6 top-0 right-0 md:hidden cursor-pointer'
-				onClick={openNav}>
-				<FontAwesomeIcon
-					icon={faBars}
-					className='text-customYellow h-8 w-8 sm:h-10 sm:w-10'
-				/>
-			</button>
+			<div className='flex items-center gap-3'>
+				<div className='hidden sm:block'>
+					<LanguageSwitcher />
+				</div>
+				<button
+					className='rounded-full border border-line p-2.5 text-signal md:hidden'
+					onClick={openNav}
+					aria-label={t('nav.openMenu')}>
+					<FontAwesomeIcon icon={faBars} className='h-5 w-5' />
+				</button>
+			</div>
 		</div>
 	)
 }

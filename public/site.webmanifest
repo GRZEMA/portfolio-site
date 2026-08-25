@@ -1,0 +1,36 @@
+{
+	"name": "Dawid Krzemiński",
+	"short_name": "DK Portfolio",
+	"description": "Consultant at Awumba and builder of SpendBeacon & Lekcjo. Full-stack developer focused on React, Next.js, and product SaaS.",
+	"start_url": "/",
+	"display": "standalone",
+	"background_color": "#070B14",
+	"theme_color": "#3DFFC8",
+	"lang": "en",
+	"icons": [
+		{
+			"src": "/favicon-32.png",
+			"sizes": "32x32",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/apple-touch-icon.png",
+			"sizes": "180x180",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/icon-192.png",
+			"sizes": "192x192",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/favicon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml",
+			"purpose": "any"
+		}
+	]
+}

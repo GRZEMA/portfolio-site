@@ -1,29 +1,87 @@
 'use client'
 
-import SkillsList from '../SkillsList/SkillsList'
-import AnimatedParagraph from '../../multi-page-components/UI/AnimatedParagraph'
-import SectionHeading from '../../multi-page-components/UI/SectionHeading'
-import SectionSubHeading from '../../multi-page-components/UI/SectionSubHeading'
-import TextWithSquares from '../../multi-page-components/UI/TextWithSquares'
+import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 const AboutSection = (): JSX.Element => {
+	const { t } = useTranslation()
+	const skills = t('home.skills', { returnObjects: true }) as string[]
+	const experience = t('home.experience', { returnObjects: true }) as {
+		role: string
+		company: string
+		period: string
+		description: string
+	}[]
+
 	return (
-		<section className='h-full w-full min-h-screen pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-14 2xl:pt-16 max-w-[1920px]'>
-			<SectionHeading id='about'>About</SectionHeading>
-			<div className='container max-w-[1400px] p-4 flex flex-col items-center pt-3 sm:pt-4 md:pt-5 lg:pt-6 xl:pt-7 2xl:pt-8 space-y-6 sm:space-y-8 md:space-y-10 lg:space-y-12 xl:space-y-14 2xl:space-y-16'>
-				<AnimatedParagraph>
-					Hello! I&apos;m a 20-year-old beginner frontend developer from Poland,
-					and I&apos;m excited to share a bit about myself. I have a passion for
-					crafting intuitive and visually appealing web interfaces that enhance
-					the user experience. Over time, I have gained valuable experience
-					working with a range of technologies, and I&apos;m continuously
-					expanding my skill set.
-				</AnimatedParagraph>
-				<SectionSubHeading>My Skills</SectionSubHeading>
-				<SkillsList />
-				<TextWithSquares classnames='font-dancing text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl'>
-					Passion Fuels Every Line of Code
-				</TextWithSquares>
+		<section
+			id='about'
+			className='relative w-full bg-mesh-section py-20 sm:py-28'>
+			<div className='container max-w-6xl'>
+				<motion.div
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true }}
+					className='max-w-3xl'>
+					<p className='mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-signal'>
+						{t('home.aboutTitle')}
+					</p>
+					<h2 className='font-display text-3xl font-bold text-text sm:text-4xl lg:text-5xl'>
+						{t('home.aboutLead')}
+					</h2>
+					<p className='mt-6 text-lg leading-relaxed text-muted'>
+						{t('home.aboutBody')}
+					</p>
+					<p className='mt-4 text-sm font-medium text-sand'>
+						{t('home.location')}
+					</p>
+				</motion.div>
+
+				<div className='mt-16'>
+					<h3 className='mb-6 font-display text-xl font-semibold text-text'>
+						{t('home.skillsTitle')}
+					</h3>
+					<ul className='flex flex-wrap gap-2.5'>
+						{skills.map((skill, index) => (
+							<motion.li
+								key={skill}
+								initial={{ opacity: 0, y: 12 }}
+								whileInView={{ opacity: 1, y: 0 }}
+								viewport={{ once: true }}
+								transition={{ delay: index * 0.03 }}
+								className='rounded-full border border-line bg-surface px-4 py-2 text-sm font-medium text-text transition-colors hover:border-signal/50 hover:text-signal'>
+								{skill}
+							</motion.li>
+						))}
+					</ul>
+				</div>
+
+				<div className='mt-20'>
+					<h3 className='mb-8 font-display text-xl font-semibold text-text'>
+						{t('home.experienceTitle')}
+					</h3>
+					<div className='space-y-0 border-l border-line pl-6 sm:pl-8'>
+						{experience.map((item, index) => (
+							<motion.article
+								key={`${item.company}-${item.role}`}
+								initial={{ opacity: 0, x: -16 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								viewport={{ once: true }}
+								transition={{ delay: index * 0.08 }}
+								className='relative pb-10 last:pb-0'>
+								<span className='absolute -left-[1.9rem] top-1.5 h-3 w-3 rounded-full border-2 border-signal bg-ink sm:-left-[2.15rem]' />
+								<div className='flex flex-wrap items-baseline justify-between gap-2'>
+									<h4 className='font-display text-lg font-semibold text-text'>
+										{item.role}{' '}
+										<span className='text-signal'>@ {item.company}</span>
+									</h4>
+									<span className='text-sm text-muted'>{item.period}</span>
+								</div>
+								<p className='mt-2 max-w-2xl text-muted'>{item.description}</p>
+							</motion.article>
+						))}
+					</div>
+				</div>
 			</div>
 		</section>
 	)

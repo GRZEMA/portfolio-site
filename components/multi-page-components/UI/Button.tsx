@@ -1,65 +1,72 @@
+'use client'
+
 import Link from 'next/link'
+import { ReactNode } from 'react'
+
+type ButtonVariant = 'primary' | 'ghost' | 'outline'
+type ButtonSize = 'md' | 'lg'
 
 interface ButtonProps {
-	children: React.ReactNode
+	children: ReactNode
 	href?: string
 	action?: () => void
 	type?: 'button' | 'submit' | 'reset'
-	size: string
+	variant?: ButtonVariant
+	size?: ButtonSize
 	customClasses?: string
 	disabled?: boolean
+	external?: boolean
+}
+
+const sizeClasses: Record<ButtonSize, string> = {
+	md: 'px-5 py-2.5 text-sm sm:text-base',
+	lg: 'px-6 py-3.5 text-base sm:text-lg',
+}
+
+const variantClasses: Record<ButtonVariant, string> = {
+	primary:
+		'bg-signal text-ink font-semibold hover:bg-white hover:shadow-glow transition-all duration-300',
+	ghost:
+		'bg-transparent text-text border border-line hover:border-signal hover:text-signal transition-all duration-300',
+	outline:
+		'bg-transparent text-signal border border-signal/40 hover:bg-signal/10 transition-all duration-300',
 }
 
 const Button = ({
 	children,
-	size,
 	href,
 	action,
-	type,
-	customClasses,
+	type = 'button',
+	variant = 'primary',
+	size = 'md',
+	customClasses = '',
 	disabled,
+	external,
 }: ButtonProps): JSX.Element => {
-	let classes
-	if (size === 'xl') {
-		classes =
-			'text-sm sm:text-base md:text-xl lg:text-2xl pt-2 pb-2 pr-4 pl-4 lg:pt-3 lg:pb-3 lg:pr-6 lg:pl-6 xl:text-3xl xl:pt-4 xl:pb-4 font-bold rounded-lg'
-	}
-	if (size === '2xl') {
-		classes =
-			'text-2xl sm:text-3xl pt-2 pb-2 pr-4 pl-4 lg:pt-4 lg:pb-4 lg:pr-8 lg:pl-8 xl:text-4xl rounded-xl'
-	}
+	const classes = `inline-flex items-center justify-center gap-2 rounded-full font-sans ${sizeClasses[size]} ${variantClasses[variant]} disabled:cursor-not-allowed disabled:opacity-50 ${customClasses}`
 
 	if (href) {
 		return (
 			<Link
 				href={href}
-				className={
-					classes +
-					' bg-customYellow max-w-fit text-background w-full xl:justify-self-end before:content-[""] after:content-[""] before:w-[120%] after:w-[120%] before:h-1/2 after:h-1/2 before:absolute after:absolute before:top-0 after:bottom-0 before:bg-[#C6AF60] after:bg-[#C6AF60] before:left-full after:right-full overflow-hidden relative hover:before:-translate-x-full hover:after:translate-x-full before:transition-transform after:transition-transform before:duration-500 after:duration-500 font-normal ' +
-					customClasses
-				}>
-				<span className='z-10 relative'>{children}</span>
+				className={classes}
+				{...(external
+					? { target: '_blank', rel: 'noopener noreferrer' }
+					: {})}>
+				{children}
 			</Link>
 		)
 	}
 
-	if (action || type) {
-		return (
-			<button
-				onClick={action ? action : undefined}
-				type={type ? type : undefined}
-				disabled={disabled ? disabled : undefined}
-				className={
-					classes +
-					' bg-customYellow max-w-fit text-background w-full xl:justify-self-end before:content-[""] after:content-[""] before:w-full after:w-full before:h-1/2 after:h-1/2 before:absolute after:absolute before:top-0 after:bottom-0 before:bg-[#C6AF60] after:bg-[#C6AF60] before:left-full after:right-full overflow-hidden relative hover:before:-translate-x-full hover:after:translate-x-full before:transition-transform after:transition-transform before:duration-500 after:duration-500 font-normal disabled:cursor-not-allowed disabled:bg-lightGray disabled:text-darkGray disabled:before:bg-transparent disabled:after:bg-transparent ' +
-					customClasses
-				}>
-				<span className='z-10 relative'>{children}</span>
-			</button>
-		)
-	}
-
-	return <p>No action or href provided</p>
+	return (
+		<button
+			onClick={action}
+			type={type}
+			disabled={disabled}
+			className={classes}>
+			{children}
+		</button>
+	)
 }
 
 export default Button

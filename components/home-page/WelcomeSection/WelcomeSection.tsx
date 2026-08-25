@@ -3,40 +3,62 @@
 import Image from 'next/image'
 import Button from '../../multi-page-components/UI/Button'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 const WelcomeSection = (): JSX.Element => {
+	const { t } = useTranslation()
+
 	return (
-		<section className='h-screen w-full bg-background pt-20 sm:pt-24 lg:pt-0 max-w-[1920px]'>
-			<div className='wrapper flex flex-col h-full w-full items-center xl:items-end lg:flex-row'>
-				<div className='img-box relative aspect-square h-full lg:max-h-[70%] xl:max-h-[90%] bg-darkGray rounded-xl lg:rounded-l-none xl:rounded-br-none'>
-					<Image
-						src='/assets/image-of-me.webp'
-						alt='Image of Dawid Krzemiński'
-						fill
-						loading='eager'
-						priority={true}
-					/>
-				</div>
+		<section className='relative flex min-h-screen w-full items-end overflow-hidden pt-24 sm:items-center'>
+			<div className='absolute inset-0'>
+				<Image
+					src='/assets/image-of-me.webp'
+					alt={t('common.name')}
+					fill
+					priority
+					sizes='100vw'
+					className='object-cover object-[center_20%]'
+				/>
+				<div className='absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-ink/40' />
+				<div className='absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-ink/50' />
+				<div className='absolute inset-0 bg-[linear-gradient(to_right,rgba(36,48,68,0.25)_1px,transparent_1px),linear-gradient(to_bottom,rgba(36,48,68,0.25)_1px,transparent_1px)] bg-[size:72px_72px] [mask-image:radial-gradient(ellipse_80%_70%_at_30%_50%,black,transparent)]' />
+			</div>
+
+			<div className='container relative z-10 mx-auto max-w-6xl pb-16 pt-10 sm:pb-24'>
 				<motion.div
-					className='welcome flex flex-col mt-6 text-xl lg:text-3xl xl:text-4xl 2xl:text-5xl justify-around h-full items-center lg:h-4/5 lg:items-center lg:w-1/2 xl:justify-around xl:pb-12 pr-4 pl-4 xl:w-full'
-					initial={{ opacity: 0, y: 100 }}
-					animate={{ opacity: 1, y: 0 }}>
-					<div className='text-box flex flex-col space-y-6 lg:space-y-10 text-center'>
-						<h1>
-							I&apos;M{' '}
-							<span className='text-3xl lg:text-5xl 2xl:text-7xl font-cormorant text-customYellow'>
-								Dawid Krzemiński
-							</span>
-						</h1>
-						<p>Your Friendly Frontend Developer</p>
-						<p>
-							Crafting Seamless User <br />
-							Experiences Through Code
-						</p>
-					</div>
-					<Button size='2xl' href='#about' customClasses='animate-bounce'>
-						Let&apos;s get acquainted!
-					</Button>
+					initial={{ opacity: 0, y: 36 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.75 }}
+					className='max-w-2xl'>
+					<motion.p
+						initial={{ opacity: 0, y: 12 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.15 }}
+						className='mb-5 text-sm font-semibold uppercase tracking-[0.22em] text-signal'>
+						{t('home.role')}
+					</motion.p>
+					<h1 className='font-display text-5xl font-extrabold leading-[0.92] tracking-tight text-text sm:text-6xl md:text-7xl lg:text-8xl'>
+						{t('common.name')}
+					</h1>
+					<motion.p
+						initial={{ opacity: 0, y: 16 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.25 }}
+						className='mt-6 max-w-lg text-lg leading-relaxed text-text/80 sm:text-xl'>
+						{t('home.tagline')}
+					</motion.p>
+					<motion.div
+						initial={{ opacity: 0, y: 16 }}
+						animate={{ opacity: 1, y: 0 }}
+						transition={{ delay: 0.35 }}
+						className='mt-10 flex flex-wrap gap-3'>
+						<Button href='/portfolio' size='lg'>
+							{t('home.ctaPrimary')}
+						</Button>
+						<Button href='/contact' variant='ghost' size='lg'>
+							{t('home.ctaSecondary')}
+						</Button>
+					</motion.div>
 				</motion.div>
 			</div>
 		</section>

@@ -2,38 +2,38 @@
 
 import Link from 'next/link'
 import Socials from './Socials'
-import TextWithSquares from '../UI/TextWithSquares'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
 const Footer = (): JSX.Element => {
+	const { t } = useTranslation()
+
 	return (
-		<footer className='w-full border-t-[3px] md:border-t-[5px] border-customYellow relative bg-background'>
-			<Socials />
-			<motion.div
-				initial={{ opacity: 0 }}
-				whileInView={{ opacity: 1 }}
-				viewport={{ once: true, margin: '-100px' }}
-				className='container max-w-prose w-full flex flex-col items-center justify-center text-xl sm:text-2xl lg:text-3xl text-center mt-10 space-y-4 pb-5 pr-5 pl-5'>
-				<p>
-					Feel free to contact me via my socials or{' '}
-					<span className='text-customYellow font-bold'>
-						<Link href='/contact'>here</Link>
-					</span>
-					!
-				</p>
-				<p>
-					I&apos;m also available through my email:{' '}
-					<span className='text-customYellow'>
-						<Link href='mailto:dawidkrzmnsk@gmail.com'>
-							dawidkrzmnsk@gmail.com
+		<footer className='relative mt-20 border-t border-line bg-ink'>
+			<div className='container max-w-6xl flex flex-col items-center gap-8 py-14 text-center'>
+				<Socials />
+				<motion.div
+					initial={{ opacity: 0 }}
+					whileInView={{ opacity: 1 }}
+					viewport={{ once: true }}
+					className='max-w-xl space-y-3 text-muted'>
+					<p>{t('footer.line1')}</p>
+					<p>
+						{t('footer.line2')}{' '}
+						<Link
+							href={`mailto:${t('common.email')}`}
+							className='font-medium text-signal hover:underline'>
+							{t('common.email')}
 						</Link>
-					</span>
+					</p>
+					<p className='pt-4 font-display text-xl font-semibold text-text'>
+						{t('footer.thanks')}
+					</p>
+				</motion.div>
+				<p className='text-xs text-muted/70'>
+					© {new Date().getFullYear()} {t('common.name')}
 				</p>
-				<TextWithSquares classnames='font-cormorant'>
-					<span>Thanks for scrolling and</span>
-					<span className='uppercase font-bold'>have a nice day!</span>
-				</TextWithSquares>
-			</motion.div>
+			</div>
 		</footer>
 	)
 }

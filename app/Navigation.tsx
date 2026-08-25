@@ -8,21 +8,13 @@ import { useState } from 'react'
 const Navigation = (): JSX.Element => {
 	const [isMobileOpen, setIsMobileOpen] = useState(false)
 
-	const openNav = () => {
-		setIsMobileOpen(true)
-	}
-
-	const closeNav = () => {
-		setIsMobileOpen(false)
-	}
-
 	return (
-		<nav className='bg-background fixed top-0 w-full z-50 text-text'>
-			<div className='container'>
-				<DesktopNav openNav={openNav} />
+		<nav className='fixed top-0 z-50 w-full border-b border-line/60 bg-ink/80 text-text backdrop-blur-xl'>
+			<div className='container max-w-6xl'>
+				<DesktopNav openNav={() => setIsMobileOpen(true)} />
 			</div>
 			<AnimatePresence>
-				{isMobileOpen && <MobileNav closeNav={closeNav} />}
+				{isMobileOpen && <MobileNav closeNav={() => setIsMobileOpen(false)} />}
 			</AnimatePresence>
 		</nav>
 	)

@@ -1,0 +1,208 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "work": "Work",
+    "services": "Services",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "common": {
+    "name": "Dawid Krzemiński",
+    "email": "dawidkrzmnsk@gmail.com",
+    "viewLive": "View live",
+    "viewWork": "View work",
+    "getInTouch": "Get in touch",
+    "explore": "Explore",
+    "backHome": "Back home",
+    "sending": "Sending…",
+    "submit": "Send message",
+    "close": "Close",
+    "features": "Features",
+    "stack": "Stack",
+    "role": "Consultant · Full-stack developer"
+  },
+  "home": {
+    "role": "Full-stack developer",
+    "tagline": "I design and ship product-grade web apps — from polished interfaces to the APIs that power them.",
+    "ctaPrimary": "See my work",
+    "ctaSecondary": "Contact me",
+    "aboutTitle": "About",
+    "aboutLead": "Frontend-oriented full-stack developer with 3 years of commercial experience.",
+    "aboutBody": "I currently work as a Consultant at Awumba, building nearshore software for clients across React, Next.js, and .NET. On the side I ship my own SaaS products — SpendBeacon for personal finance, and Lekcjo for tutors and students. I care about clear UX, reliable delivery, and code that stays maintainable after launch.",
+    "location": "Poznań Metropolitan Area, Poland",
+    "skillsTitle": "What I work with",
+    "skills": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      ".NET",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Stripe",
+      "Git",
+      "i18n"
+    ],
+    "workTitle": "Selected work",
+    "workSubtitle": "Products I’ve built end-to-end — product, frontend, and backend.",
+    "experienceTitle": "Experience",
+    "experience": [
+      {
+        "role": "Consultant",
+        "company": "Awumba",
+        "period": "2026 — Present",
+        "description": "Full-stack delivery for nearshore clients — React, Next.js, .NET, cloud integrations, and product UI."
+      },
+      {
+        "role": "Junior Frontend Developer",
+        "company": "Awumba",
+        "period": "Earlier",
+        "description": "Shipped responsive interfaces, component systems, and feature work across commercial projects."
+      },
+      {
+        "role": "Founder & Builder",
+        "company": "SpendBeacon",
+        "period": "2026 — Present",
+        "description": "Built a full-stack finance SaaS: Next.js, FastAPI, PostgreSQL, AI categorization, Stripe billing, and PL/EN i18n."
+      },
+      {
+        "role": "Founder & Builder",
+        "company": "Lekcjo",
+        "period": "2026 — Present",
+        "description": "Built a tutoring platform with scheduling, online classroom, shared notes, and homework — for solo tutors and small schools."
+      }
+    ],
+    "ctaBandTitle": "Have a product in mind?",
+    "ctaBandBody": "I help teams turn ideas into shipped web products — clean UI, solid architecture, and fast iteration.",
+    "ctaBandButton": "Let’s talk"
+  },
+  "portfolio": {
+    "title": "Work",
+    "subtitle": "Live products I’ve designed, built, and launched.",
+    "ctaTitle": "Want something similar?",
+    "ctaBody": "Tell me about your product — I’ll help you shape and ship it.",
+    "projects": {
+      "spendbeacon": {
+        "name": "SpendBeacon",
+        "tagline": "Personal finance, budgets & bank CSV import",
+        "description": "A full-stack SaaS that turns bank CSV/Excel exports into clear spending insights. Free rules-based categorization; Premium AI maps unusual layouts, auto-categorizes merchants, and answers questions about your money.",
+        "features": [
+          "CSV/Excel import for any bank (mBank, PKO BP, ING, and more)",
+          "Rules-based and AI categorization with learning from corrections",
+          "Safe-to-spend, budgets, subscription radar, and alerts",
+          "AI finance coach with merchant-level reports",
+          "Stripe subscriptions, JWT/OAuth auth, PWA, PL/EN i18n"
+        ],
+        "stack": [
+          "Next.js",
+          "FastAPI",
+          "PostgreSQL",
+          "Redis",
+          "Celery",
+          "Groq AI",
+          "Stripe",
+          "PWA"
+        ]
+      },
+      "lekcjo": {
+        "name": "Lekcjo",
+        "tagline": "Schedule, notes, and lessons in one place",
+        "description": "A platform for tutors and their students — booking, online classroom, and materials together. Parents pick open slots, lessons happen with video, board, and notebook in one window, and homework lands where it belongs — not in a chat thread.",
+        "features": [
+          "Scheduling with open slots parents can book",
+          "Online lesson room: video, board, and notebook",
+          "Lesson notes and homework shared with the student",
+          "Built for solo tutors and small schools — no marketplace fees",
+          "Clear pricing: Solo and School plans"
+        ],
+        "stack": [
+          "Next.js",
+          "TypeScript",
+          "Tailwind CSS",
+          "Real-time classroom",
+          "Scheduling"
+        ]
+      }
+    }
+  },
+  "services": {
+    "title": "Services",
+    "subtitle": "How I can help your product move forward.",
+    "offerTitle": "What I offer",
+    "offers": [
+      {
+        "title": "Product web apps",
+        "description": "End-to-end Next.js applications — auth, billing, dashboards, and the flows users actually need."
+      },
+      {
+        "title": "Frontend craft",
+        "description": "Responsive React interfaces with strong typography, motion, and accessibility — built to ship."
+      },
+      {
+        "title": "Full-stack delivery",
+        "description": "APIs and data layers with FastAPI, .NET, PostgreSQL, Redis, and the glue that keeps products reliable."
+      },
+      {
+        "title": "SaaS foundations",
+        "description": "Stripe subscriptions, i18n, PWA, CSV/import pipelines, and AI-assisted features when they earn their place."
+      },
+      {
+        "title": "Nearshore collaboration",
+        "description": "Clear communication, ownership of tasks, and pragmatic delivery as part of your team via Awumba or directly."
+      },
+      {
+        "title": "UX-minded engineering",
+        "description": "I design interactions with the user journey in mind — fewer dead ends, clearer states, better retention."
+      }
+    ],
+    "whyTitle": "Why work with me",
+    "whyItems": [
+      "Three years of commercial delivery across React, Next.js, and .NET",
+      "I ship my own SaaS products — I know the full loop from idea to billing",
+      "Comfortable owning unfamiliar work and learning what the task needs",
+      "Strong frontend depth with real backend and infra experience",
+      "PL/EN bilingual — useful for Polish market products and international teams",
+      "Focus on maintainable code and honest timelines"
+    ],
+    "ctaTitle": "Ready to start?",
+    "ctaBody": "Share a short brief and I’ll come back with a clear next step.",
+    "ctaButton": "Contact me"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Tell me about your project, role, or idea.",
+    "formTitle": "Send a message",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone (optional)",
+    "address": "Company / city (optional)",
+    "message": "What’s on your mind?",
+    "success": "Message sent — I’ll get back to you soon.",
+    "findTitle": "Elsewhere",
+    "findBody": "Prefer socials or email? Reach me directly."
+  },
+  "footer": {
+    "line1": "Available for product work, consulting, and collaboration.",
+    "line2": "Or write to",
+    "thanks": "Thanks for stopping by."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "body": "This route doesn’t exist — let’s get you back."
+  },
+  "meta": {
+    "homeTitle": "Dawid Krzemiński | Full-stack Developer",
+    "homeDescription": "Consultant at Awumba and builder of SpendBeacon & Lekcjo. Full-stack developer focused on React, Next.js, and product SaaS.",
+    "portfolioTitle": "Work | Dawid Krzemiński",
+    "portfolioDescription": "SpendBeacon and Lekcjo — live products built by Dawid Krzemiński.",
+    "servicesTitle": "Services | Dawid Krzemiński",
+    "servicesDescription": "Product web apps, frontend craft, and full-stack delivery.",
+    "contactTitle": "Contact | Dawid Krzemiński",
+    "contactDescription": "Get in touch with Dawid Krzemiński about your next product or collaboration."
+  }
+}

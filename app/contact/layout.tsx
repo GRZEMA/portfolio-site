@@ -1,13 +1,16 @@
-import { Metadata } from 'next'
+import { createPageMetadata } from '@/lib/metadata'
 
-export const metadata: Metadata = {
-	title: 'Contact Dawid Krzemiński | Reach Out for Collaborations',
+export const metadata = createPageMetadata({
+	title: 'Contact',
 	description:
-		'Get in touch with Dawid Krzemiński to discuss exciting collaboration opportunities. Contact me for frontend development, UI/UX design, and more.',
-}
+		'Get in touch with Dawid Krzemiński about your next product or collaboration.',
+	path: '/contact',
+})
 
-const ContactLayout = ({ children }: { children: React.ReactNode }) => {
-	return <>{children}</>
+export default function ContactLayout({
+	children,
+}: {
+	children: React.ReactNode
+}) {
+	return children
 }
-
-export default ContactLayout
