@@ -4,6 +4,7 @@
     "about": "O mnie",
     "work": "Projekty",
     "services": "Usługi",
+    "appointments": "Spotkanie",
     "contact": "Kontakt",
     "openMenu": "Otwórz menu",
     "closeMenu": "Zamknij menu"
@@ -85,7 +86,8 @@
       "MVP / prototypy",
       "Scoped feature work"
     ],
-    "ctaBandButton": "Wyślij brief"
+    "ctaBandButton": "Wyślij brief",
+    "ctaBandBook": "Umów rozmowę"
   },
   "portfolio": {
     "title": "Projekty",
@@ -177,7 +179,8 @@
     ],
     "ctaTitle": "Masz kompaktowy brief?",
     "ctaBody": "Jeśli to się mieści w wieczorach i weekendach — napisz krótko. Wrócę z info o fit, pojemności i kolejnych krokach.",
-    "ctaButton": "Napisz do mnie"
+    "ctaButton": "Napisz do mnie",
+    "ctaBook": "Umów rozmowę"
   },
   "contact": {
     "title": "Kontakt",
@@ -190,8 +193,83 @@
     "address": "Firma / miasto (opcjonalnie)",
     "message": "O czym chcesz napisać?",
     "success": "Wiadomość wysłana — odezwę się wkrótce.",
+    "bookPrompt": "Wolisz rozmowę na żywo?",
+    "bookLink": "Umów spotkanie",
     "findTitle": "Gdzie indziej",
     "findBody": "Wolisz social media albo mail? Napisz bezpośrednio."
+  },
+  "appointments": {
+    "eyebrow": "Spotkania",
+    "title": "Umów spotkanie",
+    "subtitle": "Zaproponuj termin na wieczór albo weekend. Potwierdzę albo odrzucę mailem.",
+    "availability": "Starty w tygodniu 17:00–20:00, w weekendy 10:00–18:00 (Europa/Warszawa). Termin nie jest zarezerwowany, dopóki go nie przyjmę.",
+    "name": "Imię i nazwisko",
+    "email": "Email",
+    "date": "Data",
+    "time": "Godzina rozpoczęcia",
+    "duration": "Czas trwania",
+    "topic": "O czym chcesz porozmawiać?",
+    "message": "Coś, co powinienem wiedzieć? (opcjonalnie)",
+    "submit": "Wyślij prośbę",
+    "sending": "Wysyłanie…",
+    "successTitle": "Prośba wysłana",
+    "successBody": "Dostaniesz maila, gdy przyjmę albo odrzucę termin. Na razie nie jest zarezerwowany.",
+    "another": "Zaproponuj inny termin",
+    "noSlots": "Tego dnia nie ma już wolnych godzin. Wybierz inną datę.",
+    "pickTime": "Wybierz godzinę rozpoczęcia.",
+    "minutes": "{{count}} min",
+    "errors": {
+      "invalid": "Sprawdź formularz i spróbuj jeszcze raz.",
+      "invalid-email": "Podaj poprawny adres email.",
+      "invalid-time": "Ten termin nie jest dostępny. Wybierz inny.",
+      "rate": "Za dużo próśb. Spróbuj za chwilę.",
+      "email-config": "Poczta nie jest jeszcze skonfigurowana. Napisz bezpośrednio.",
+      "unexpected": "Nie udało się wysłać prośby. Spróbuj jeszcze raz albo napisz maila."
+    },
+    "respond": {
+      "acceptTitle": "Przyjąć to spotkanie?",
+      "rejectTitle": "Odrzucić to spotkanie?",
+      "chooseTitle": "Co zrobić z tą prośbą?",
+      "acceptBody": "Przyjęcie doda je do Google Calendar i wyśle potwierdzenie mailem.",
+      "rejectBody": "Odrzucenie wyśle maila, że ten termin nie pasuje. Godzina zostaje wolna.",
+      "chooseBody": "Przyjmij, żeby wpisać termin do kalendarza, albo odrzuć — wtedy dostaną maila.",
+      "confirmAccept": "Przyjmij i dodaj do kalendarza",
+      "confirmReject": "Odrzuć i wyślij maila",
+      "switchAccept": "Jednak przyjmij",
+      "switchReject": "Jednak odrzuć",
+      "note": "Notatka do ich maila (opcjonalnie)",
+      "invalidTitle": "Ten link nie działa",
+      "invalidBody": "Link jest niepełny albo został zmieniony.",
+      "expiredTitle": "Ta prośba wygasła",
+      "expiredBody": "Linki do spotkań działają 14 dni. Poproś o nową prośbę.",
+      "from": "Od",
+      "when": "Kiedy",
+      "topic": "Temat",
+      "noteLabel": "Ich notatka"
+    },
+    "done": {
+      "acceptedTitle": "Dodane do kalendarza",
+      "acceptedBody": "Spotkanie jest w Google Calendar, a potwierdzenie właśnie idzie mailem.",
+      "rejectedTitle": "Spotkanie odrzucone",
+      "rejectedBody": "Dostali maila, że ten termin nie pasuje.",
+      "already-acceptedTitle": "Już przyjęte",
+      "already-acceptedBody": "Ta prośba jest już w kalendarzu.",
+      "already-rejectedTitle": "Już odrzucone",
+      "already-rejectedBody": "Ta prośba została już odrzucona.",
+      "calendar-missingTitle": "Google Calendar nie jest podłączony",
+      "calendar-missingBody": "Nic się nie zmieniło. Podłącz kalendarz, potem otwórz maila i przyjmij jeszcze raz.",
+      "accepted-email-failedTitle": "Jest w kalendarzu, ale mail nie wyszedł",
+      "accepted-email-failedBody": "Wydarzenie powstało. Potwierdzenie nie zostało wysłane — napisz do nich bezpośrednio.",
+      "rejected-email-failedTitle": "Odrzucone, ale mail nie wyszedł",
+      "rejected-email-failedBody": "Prośba jest oznaczona jako odrzucona. Mail nie wyszedł — daj im znać sam.",
+      "expiredTitle": "Ta prośba wygasła",
+      "expiredBody": "Linki do spotkań działają 14 dni.",
+      "invalidTitle": "Ten link nie działa",
+      "invalidBody": "Link jest niepełny albo został zmieniony.",
+      "errorTitle": "Coś poszło nie tak",
+      "errorBody": "Nic nie zostało zamknięte. Otwórz maila i kliknij przycisk jeszcze raz.",
+      "back": "Wróć na stronę"
+    }
   },
   "footer": {
     "line1": "Selektywne zlecenia wieczorami i w weekendy — landingi, małe systemy, scoped buildy.",
@@ -210,6 +288,8 @@
     "servicesTitle": "Usługi | Dawid Krzemiński",
     "servicesDescription": "Zlecenia wieczorami i w weekendy: strony marketingowe, małe systemy, MVP i full-stack.",
     "contactTitle": "Kontakt | Dawid Krzemiński",
-    "contactDescription": "Napisz w sprawie zlecenia na wieczór/weekend albo po prostu się przywitaj."
+    "contactDescription": "Napisz w sprawie zlecenia na wieczór/weekend albo po prostu się przywitaj.",
+    "appointmentsTitle": "Spotkanie | Dawid Krzemiński",
+    "appointmentsDescription": "Umów rozmowę na wieczór lub weekend. Potwierdzone terminy trafiają do Google Calendar."
   }
 }

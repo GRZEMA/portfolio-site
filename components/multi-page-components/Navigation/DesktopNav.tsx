@@ -21,6 +21,7 @@ const DesktopNav = ({ openNav }: DesktopNavProps): JSX.Element => {
 		{ href: '/#about', label: t('nav.about') },
 		{ href: '/portfolio', label: t('nav.work') },
 		{ href: '/services', label: t('nav.services') },
+		{ href: '/appointments', label: t('nav.appointments') },
 		{ href: '/contact', label: t('nav.contact') },
 	]
 

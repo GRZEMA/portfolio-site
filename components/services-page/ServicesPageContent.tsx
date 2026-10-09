@@ -89,9 +89,12 @@ const ServicesPageContent = (): JSX.Element => {
 						<p className='mx-auto mt-4 max-w-xl text-muted'>
 							{t('services.ctaBody')}
 						</p>
-						<div className='mt-8 flex justify-center'>
+						<div className='mt-8 flex flex-wrap justify-center gap-3'>
 							<Button href='/contact' size='lg'>
 								{t('services.ctaButton')}
+							</Button>
+							<Button href='/appointments' variant='ghost' size='lg'>
+								{t('services.ctaBook')}
 							</Button>
 						</div>
 					</div>

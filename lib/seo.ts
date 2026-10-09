@@ -65,4 +65,12 @@ export const routes = [
 		changeFrequency: 'monthly' as const,
 		priority: 0.7,
 	},
+	{
+		path: '/appointments',
+		title: 'Book a time | Dawid Krzemiński',
+		description:
+			'Request an evening or weekend appointment. Confirmed times are added to Google Calendar.',
+		changeFrequency: 'monthly' as const,
+		priority: 0.6,
+	},
 ] as const

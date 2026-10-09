@@ -4,6 +4,7 @@
     "about": "About",
     "work": "Work",
     "services": "Services",
+    "appointments": "Book",
     "contact": "Contact",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
@@ -85,7 +86,8 @@
       "MVP / prototype builds",
       "Scoped feature work"
     ],
-    "ctaBandButton": "Send a brief"
+    "ctaBandButton": "Send a brief",
+    "ctaBandBook": "Book a call"
   },
   "portfolio": {
     "title": "Work",
@@ -177,7 +179,8 @@
     ],
     "ctaTitle": "Have a compact brief?",
     "ctaBody": "If it can live in evenings and weekends, send a short note — I’ll reply with fit, capacity, and next steps.",
-    "ctaButton": "Contact me"
+    "ctaButton": "Contact me",
+    "ctaBook": "Book a call"
   },
   "contact": {
     "title": "Contact",
@@ -190,8 +193,83 @@
     "address": "Company / city (optional)",
     "message": "What’s on your mind?",
     "success": "Message sent — I’ll get back to you soon.",
+    "bookPrompt": "Prefer a live conversation?",
+    "bookLink": "Request an appointment",
     "findTitle": "Elsewhere",
     "findBody": "Prefer socials or email? Reach me directly."
+  },
+  "appointments": {
+    "eyebrow": "Appointments",
+    "title": "Book a time",
+    "subtitle": "Request a call for an evening or a weekend. I’ll confirm or decline by email.",
+    "availability": "Start times are weekday evenings 17:00–20:00 and weekends 10:00–18:00, Europe/Warsaw. Nothing is held until I accept.",
+    "name": "Your name",
+    "email": "Email",
+    "date": "Date",
+    "time": "Start time",
+    "duration": "Duration",
+    "topic": "What should we talk about?",
+    "message": "Anything I should know? (optional)",
+    "submit": "Request appointment",
+    "sending": "Sending…",
+    "successTitle": "Request sent",
+    "successBody": "You’ll get an email when I accept or decline. The time isn’t reserved yet.",
+    "another": "Request another time",
+    "noSlots": "No open slots left on this day. Try another date.",
+    "pickTime": "Choose a start time.",
+    "minutes": "{{count}} min",
+    "errors": {
+      "invalid": "Check the form and try again.",
+      "invalid-email": "Enter a valid email address.",
+      "invalid-time": "That time isn’t available. Pick another slot.",
+      "rate": "Too many requests. Try again in a little while.",
+      "email-config": "Email isn’t configured yet. Write to me directly instead.",
+      "unexpected": "Couldn’t send the request. Try again, or email me directly."
+    },
+    "respond": {
+      "acceptTitle": "Accept this appointment?",
+      "rejectTitle": "Decline this appointment?",
+      "chooseTitle": "What should happen with this request?",
+      "acceptBody": "Accepting adds it to your Google Calendar and emails them a confirmation.",
+      "rejectBody": "Declining emails them that this time doesn’t work. The slot stays free.",
+      "chooseBody": "Accept to put it on your calendar, or decline and they’ll get an email.",
+      "confirmAccept": "Accept and add to calendar",
+      "confirmReject": "Decline and send email",
+      "switchAccept": "Accept instead",
+      "switchReject": "Decline instead",
+      "note": "Note to include in their email (optional)",
+      "invalidTitle": "This link doesn’t work",
+      "invalidBody": "The link is incomplete or has been changed.",
+      "expiredTitle": "This request expired",
+      "expiredBody": "Appointment links stay valid for 14 days. Ask them to send a new request.",
+      "from": "From",
+      "when": "When",
+      "topic": "Topic",
+      "noteLabel": "Their note"
+    },
+    "done": {
+      "acceptedTitle": "Added to your calendar",
+      "acceptedBody": "The appointment is on Google Calendar, and a confirmation email is on its way.",
+      "rejectedTitle": "Appointment declined",
+      "rejectedBody": "They’ve been emailed that this time doesn’t work.",
+      "already-acceptedTitle": "Already accepted",
+      "already-acceptedBody": "This request was already added to your calendar.",
+      "already-rejectedTitle": "Already declined",
+      "already-rejectedBody": "This request was already declined.",
+      "calendar-missingTitle": "Google Calendar isn’t connected",
+      "calendar-missingBody": "Nothing was changed. Connect Calendar, then open the email and accept again.",
+      "accepted-email-failedTitle": "On your calendar, but the email failed",
+      "accepted-email-failedBody": "The event was created. The confirmation email didn’t send — write to them directly.",
+      "rejected-email-failedTitle": "Declined, but the email failed",
+      "rejected-email-failedBody": "The request is marked declined. The email didn’t send — tell them yourself.",
+      "expiredTitle": "This request expired",
+      "expiredBody": "Appointment links stay valid for 14 days.",
+      "invalidTitle": "This link doesn’t work",
+      "invalidBody": "The link is incomplete or has been changed.",
+      "errorTitle": "Something went wrong",
+      "errorBody": "Nothing was finalized. Open the email and try the button again.",
+      "back": "Back to the site"
+    }
   },
   "footer": {
     "line1": "Selective evening & weekend commissions — landings, small systems, scoped builds.",
@@ -210,6 +288,8 @@
     "servicesTitle": "Services | Dawid Krzemiński",
     "servicesDescription": "Evening and weekend commissions: marketing pages, small systems, MVPs, and full-stack builds.",
     "contactTitle": "Contact | Dawid Krzemiński",
-    "contactDescription": "Get in touch about an evening/weekend commission or say hello."
+    "contactDescription": "Get in touch about an evening/weekend commission or say hello.",
+    "appointmentsTitle": "Book a time | Dawid Krzemiński",
+    "appointmentsDescription": "Request an evening or weekend call. Confirmed appointments are added to Google Calendar."
   }
 }

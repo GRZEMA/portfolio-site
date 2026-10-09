@@ -91,9 +91,12 @@ const PortfolioSection = (): JSX.Element => {
 							</li>
 						))}
 					</ul>
-					<div className='mt-8 flex justify-center'>
+					<div className='mt-8 flex flex-wrap justify-center gap-3'>
 						<Button href='/contact' size='lg'>
 							{t('home.ctaBandButton')}
+						</Button>
+						<Button href='/appointments' variant='ghost' size='lg'>
+							{t('home.ctaBandBook')}
 						</Button>
 					</div>
 				</motion.div>

@@ -6,6 +6,7 @@ import Modal from '@/components/multi-page-components/Modal/Modal'
 import { useContext } from 'react'
 import { ModalContext } from '../store/modal-context'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 
 const ContactPage = () => {
@@ -27,6 +28,12 @@ const ContactPage = () => {
 							<h1 className='max-w-3xl font-display text-5xl font-extrabold tracking-tight text-text sm:text-6xl lg:text-7xl'>
 								{t('contact.subtitle')}
 							</h1>
+							<p className='mt-6 max-w-2xl text-lg text-muted'>
+								{t('contact.bookPrompt')}{' '}
+								<Link href='/appointments' className='font-medium text-signal hover:underline'>
+									{t('contact.bookLink')}
+								</Link>
+							</p>
 						</motion.div>
 					</div>
 				</section>
